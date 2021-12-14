@@ -15,8 +15,8 @@ yarn-error.log*
 
 # data volume 挂载目录
 data/db/mysql/
-data/app/certificate/
-data/app/config.js
+# data/app/certificate/
+# data/app/config.js
 data/app/upload/
 data/app/smallimg/
 

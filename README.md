@@ -9,12 +9,12 @@ docker-compose 启动应用
 docker-compose up -d
 ```
 
-docker-compose 删除应用
+docker-compose 停止应用
 ```
 docker-compose down
 ```
 
-删除应用同时删除所有 attached volumes  
+停止应用同时删除所有 attached volumes  
 （这样 `/docker-entrypoint-initdb.d` 里的 `.sql` 文件就可以再次被执行）
 ``` 
 docker-compose down -v
