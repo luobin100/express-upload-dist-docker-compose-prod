@@ -61,7 +61,7 @@
 https://youtu.be/xbtRok0olg4
 
 ### 如何获得？
-1. 下载系统程序文件：[https://e.coding.net/luo001/upload_and_share/express-upload-dist-docker-compose-prod.git](https://e.coding.net/luo001/upload_and_share/express-upload-dist-docker-compose-prod.git)
+1. 下载系统程序文件：[https://luo001.coding.net/p/upload_and_share/d/express-upload-dist-docker-compose-prod/git/archive/master/?download=true](https://luo001.coding.net/p/upload_and_share/d/express-upload-dist-docker-compose-prod/git/archive/master/?download=true)
 2. 支付宝扫描下方二维码支付后，请在支付宝的 `账单` --》找到这一笔交易 --》 `联系收款方` 处联系我，获取产品密钥。
 ![付款码](https://cdn.jsdelivr.net/gh/luobin100/gofly@main/qrcode-alipay.png)
 3. 把产品密钥填写到 `data/app/config.js` 里面即可。
