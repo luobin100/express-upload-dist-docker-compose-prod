@@ -1,0 +1,39 @@
+version: "3"
+
+services:
+  app:
+    image: luo001-docker.pkg.coding.net/upload_and_share/luo1.cn/express-upload-dist:0.21
+    stdin_open: true # docker run -i
+    tty: true        # docker run -t
+    restart: unless-stopped
+    ports:
+      - "18080:80" # Chrome 因为安全原因屏蔽了 10080端口
+      - "10443:443"
+    volumes:
+      - "./data/app/config.js:/apps/express-upload/config.js"
+      - "./data/app/certificate:/apps/express-upload/certificate"
+      - "./data/app/upload:/apps/express-upload/public/upload"
+      - "./data/app/smallimg:/apps/express-upload/public/smallimg"
+    depends_on:
+      - redis
+      - mariadb
+
+  redis:
+    image: redis:3.0.6
+    restart: unless-stopped
+    ports:
+      - "16379:6379"
+    command: redis-server
+
+  mariadb:
+    image: mariadb:10.0.38
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: "wPzEy+vFQUlZpA"
+      MYSQL_USER: 'admin'
+      MYSQL_PASS: 'kTfH0tCO6Z4IWg'
+    ports:
+      - "13306:3306"
+    volumes:
+      - "./data/db/mysql:/var/lib/mysql"
+      - "./data/db/initdb:/docker-entrypoint-initdb.d/" # 说明：将sql文件放到容器中的/docker-entrypoint-initdb.d/ 目录，就会在mysql第一次启动时执行。之后重启容器不会重复执行
