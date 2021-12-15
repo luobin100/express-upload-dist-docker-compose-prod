@@ -87,3 +87,4 @@ PS：另外如果有免费额度的话，搭配腾讯云自家的 COS、CDN，�
 3. 如何域名备案、域名解析设置。
 4. 如何 Nginx 二级域名反向代理设置。（比如你的域名为 `mydomain.com`，可将 `us.mydomain.com` 指向你的 `Upload & Share` 上传分享应用）
 5. Nginx HTTPS 证书设置。（有域名和 https，微信里打开分享链接就不会提示不安全，不用再点一次确认按钮。）
+6. 安装 docker、docker-compose。
