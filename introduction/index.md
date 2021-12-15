@@ -68,3 +68,22 @@ https://youtu.be/xbtRok0olg4
 
 ### 系统详细使用说明
 进一步详细系统说明请参考 `README.md` 文件。
+
+### 推广
+欢迎通过我的腾讯云推广链接购买服务器，非常感谢。  
+
+[【腾讯云】云产品限时秒杀，爆款2核4G云服务器首年74元](https://cloud.tencent.com/act/cps/redirect?redirect=1077&cps_key=f4cb43a82f11256f5667ccb165f14ec4&from=console)
+
+目前个人使用的就是这一款腾讯云服务器： 2核4G 8M带宽 的轻量云服务器。74 一年。  
+
+![腾讯轻量云](https://cdn.jsdelivr.net/gh/luobin100/gofly@main/%E8%85%BE%E8%AE%AF%E4%BA%91%E8%BD%BB%E9%87%8F.png)
+
+PS：另外如果有免费额度的话，搭配腾讯云自家的 COS、CDN，组建 `CDN --》 COS --》 轻量云 ` 结构，可体验跑满带宽的用户体验。  
+由于腾讯云通过内网 IP 访问，相同区域是不消耗流量的，所以腾讯轻量云内网向 COS 对象存储服务上传是免流量的。CDN 向 COS 的回源流量还是会消耗的。
+
+通过我的推广链接购买成功的用户，将可获得以下免费咨询服务：
+1. 腾讯云 CDN 回源设置。
+2. COS 内网访问链接设置，存储桶设置。
+3. 如何域名备案、域名解析设置。
+4. 如何 Nginx 二级域名反向代理设置。（比如你的域名为 `mydomain.com`，可将 `us.mydomain.com` 指向你的 `Upload & Share` 上传分享应用）
+5. Nginx HTTPS 证书设置。（有域名和 https，微信里打开分享链接就不会提示不安全，不用再点一次确认按钮。）
