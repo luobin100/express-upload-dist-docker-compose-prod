@@ -24,6 +24,7 @@ docker-compose down -v
 #### 注意
 1. 如果启动时 `docker-compose up -d` 出现 `mount path must be absolute` 错误，要全部 down 了，在启动就可以了。  
 2. 如果登录时出现 `Connection lost: The server closed the connection.` 错误，说明数据库容器还没有完全启动，等待 10 秒左右即可。
+3. 如果登录时出现 `have not permission` 错误，要把 `data/db/mysql` 目录删除之后，在重新 docker-compose up。
 
 #### 如何修改用户名密码（进入数据库 Docker 容器，使用 `mysql` 命令修改）
 ```
