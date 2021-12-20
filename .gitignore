@@ -19,6 +19,7 @@ data/db/mysql/
 # data/app/config.js
 data/app/upload/
 data/app/smallimg/
+data/redis/data
 
 # 腾讯云拉取镜像错误文件
 --data-raw

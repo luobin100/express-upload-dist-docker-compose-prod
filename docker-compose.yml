@@ -23,7 +23,9 @@ services:
     restart: unless-stopped
     expose:
       - "6379"
-    command: redis-server
+    volumes:
+      - "./data/redis/data:/data" # redis 持久化保存数据
+    command: redis-server --save 60 1 --loglevel warning # 每60秒至少有一个写操作进行一次数据保存。 日志级别 警告。
 
   mariadb:
     image: mariadb:10.0.38
