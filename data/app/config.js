@@ -4,8 +4,8 @@ var config = {};
 config.productKey = "xxxxxxxx";
 
 config.db = {
-    host: "172.17.0.1",
-    port: 13306,
+    host: "mariadb", // docker-compose 内部 service 名可以作为 hostname
+    port: 3306,
     user: "root",
     password: "wPzEy+vFQUlZpA",
     database: "upload",
@@ -13,8 +13,8 @@ config.db = {
 };
 
 config.redis= {
-    host: "172.17.0.1",
-    port: 16379
+    host: "redis", // docker-compose 内部 service 名可以作为 hostname
+    port: 6379
 };
 
 config.web = {

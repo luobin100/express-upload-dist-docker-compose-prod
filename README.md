@@ -15,7 +15,9 @@ docker-compose down
 ```
 
 停止应用同时删除所有 attached volumes  
-（这样 `/docker-entrypoint-initdb.d` 里的 `.sql` 文件就可以再次被执行）
+（这样 `/docker-entrypoint-initdb.d` 里的 `.sql` 文件就可以再次被执行。  
+但是数据库里面有的数据，不会删掉重来，因为初始化 sql 没有删除已有数据。  
+可以手动把 `data/db/mysql` 整个数据库文件夹删除，并且使用下面的 `-v` 就可以重新初始化数据库了。）
 ``` 
 docker-compose down -v
 ```
@@ -25,13 +27,27 @@ docker-compose down -v
 
 #### 如何修改用户名密码（进入数据库 Docker 容器，使用 `mysql` 命令修改）
 ```
-docker exec -it express-upload-dist-docker-compose_mariadb_1 bash
+docker exec -it express-upload-dist-docker-compose-prod_mariadb_1 bash
 mysql -D upload -u root -p
 // 输入 mariadb 容器设置的 root 密码
 update users set password = '12345' where username = 'aaa';
 ```
 
+#### 如何删除 redis 缓存 （进入 redis Docker 容器，使用 `redis-cli` 命令修改）
+
+```
+docker exec -it express-upload-dist-docker-compose-prod_redis_1 /bin/bash
+redis-cli
+// 删除文件列表缓存
+del filelist 
+// 查看文件列表数据（所有）
+lrange filelist 0 -1
+// 查看所有 session （其中有一个是文件列表）
+keys *
+```
+
 #### 系统介绍
+
 1. 默认初始登录用户名密码：`aaa` `123`、 `bbb` `123`。
 1. 共使用了 3 个 Docker 容器：`应用程序 node 容器`、 `mariadb 容器`、 `redis 容器`。
 2. 默认使用了 3 个端口：node 应用程序： `18080`、mariadb： `13306`、redis： `16379`。可以根据需要修改。详见 `配置说明`。

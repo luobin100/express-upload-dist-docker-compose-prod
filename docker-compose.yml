@@ -21,8 +21,8 @@ services:
   redis:
     image: redis:3.0.6
     restart: unless-stopped
-    ports:
-      - "16379:6379"
+    expose:
+      - "6379"
     command: redis-server
 
   mariadb:
@@ -32,8 +32,8 @@ services:
       MYSQL_ROOT_PASSWORD: "wPzEy+vFQUlZpA"
       MYSQL_USER: 'admin'
       MYSQL_PASS: 'kTfH0tCO6Z4IWg'
-    ports:
-      - "13306:3306"
+    expose:
+      - "3306"
     volumes:
       - "./data/db/mysql:/var/lib/mysql"
       - "./data/db/initdb:/docker-entrypoint-initdb.d/" # 说明：将sql文件放到容器中的/docker-entrypoint-initdb.d/ 目录，就会在mysql第一次启动时执行。之后重启容器不会重复执行
