@@ -47,9 +47,8 @@ lrange filelist 0 -1
 keys *
 ```
 #### 如何保存 redis 缓存
-
-1. 阻止用户网页访问。（方式可以是域名切换，用户名修改加 session 手动删除等）
-2. 等待60秒以后，使用 `docker-compose down` 停止服务。（60秒是因为 redis 设置了 60 秒保存一次数据）
+1. 每60秒会自动保存一次 redis 数据。
+2. 使用 `docker-compose down` 停止服务。redis 容器接收到 `SIGTERM` (停止) 信号，数据库会自动保存。
 3. 下次启动时，redis 就会自动加载保存的数据库:  `data/redis/data/dump.rdb`。
 
 #### 系统介绍
