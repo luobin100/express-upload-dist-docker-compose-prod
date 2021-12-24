@@ -2,7 +2,7 @@ version: "3"
 
 services:
   app:
-    image: luo001-docker.pkg.coding.net/upload_and_share/luo1.cn/express-upload-dist:0.23
+    image: luo001-docker.pkg.coding.net/upload_and_share/luo1.cn/express-upload-dist:0.24
     stdin_open: true # docker run -i
     tty: true        # docker run -t
     restart: unless-stopped
